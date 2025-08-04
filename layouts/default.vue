@@ -50,9 +50,22 @@
       </v-btn>
       <v-toolbar-title v-text="title" />
       <v-spacer />
+      
+      <!-- Authentication Section -->
+      <div v-if="isAuthenticated" class="d-flex align-center">
+        <UserProfile />
+      </div>
+      <div v-else class="d-flex align-center">
+        <v-btn color="primary" to="/login">
+          <v-icon left>mdi-google</v-icon>
+          Sign In / Join
+        </v-btn>
+      </div>
+      
       <v-btn
         icon
         @click.stop="rightDrawer = !rightDrawer"
+        class="ml-2"
       >
         <v-icon>mdi-menu</v-icon>
       </v-btn>
@@ -89,7 +102,13 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
+  computed: {
+    ...mapGetters('auth', ['isAuthenticated', 'user'])
+  },
+  
   data () {
     return {
       clipped: false,
@@ -97,9 +116,14 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
+          icon: 'mdi-home',
+          title: 'Home',
           to: '/'
+        },
+        {
+          icon: 'mdi-cloud-upload',
+          title: 'Upload Images',
+          to: '/upload'
         },
         {
           icon: 'mdi-chart-bubble',
@@ -110,7 +134,7 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'Kinobi'
     }
   }
 }
