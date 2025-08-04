@@ -3,6 +3,9 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   // Target for static hosting
   target: 'static',
+
+  // Enable SSR for proper static generation
+  ssr: true,
   
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
