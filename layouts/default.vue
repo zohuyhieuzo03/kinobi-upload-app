@@ -93,7 +93,7 @@
       </v-list>
     </v-navigation-drawer>
     <v-footer
-      :absolute="!fixed"
+      fixed
       app
     >
       <span>&copy; {{ new Date().getFullYear() }}</span>
