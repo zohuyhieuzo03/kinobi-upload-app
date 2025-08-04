@@ -29,7 +29,7 @@ export default {
   css: [
   ],
 
-  // Environment variables
+  // Environment variables for client-side
   env: {
     FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
     FIREBASE_AUTH_DOMAIN: process.env.FIREBASE_AUTH_DOMAIN,
