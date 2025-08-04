@@ -1,4 +1,9 @@
 # Kinobi Image Upload Application
+
+## Live Demo
+
+https://kinobi-upload-app.vercel.app/
+
 ## Architecture
 
 <img src="architecture.png" width="400" alt="Architecture Diagram">
@@ -131,7 +136,7 @@ All API requests include Firebase authentication tokens in the `Authorization` h
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+5. Open a Pull Requestx
 
 ## License
 
