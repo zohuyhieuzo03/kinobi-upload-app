@@ -11,50 +11,7 @@
         </v-card-title>
         <v-card-text>
           <!-- Authentication Status -->
-          <v-alert
-            v-if="isAuthenticated"
-            type="success"
-            text
-            icon="mdi-check-circle"
-            class="mb-4"
-          >
-            <div class="d-flex align-center">
-              <v-avatar size="40" class="mr-3">
-                <v-img
-                  v-if="user && user.photoURL"
-                  :src="user.photoURL"
-                  :alt="user.displayName || 'User'"
-                />
-                <v-icon v-else>mdi-account-circle</v-icon>
-              </v-avatar>
-              <div>
-                <div class="subtitle-1">Welcome back, {{ user ? user.displayName || user.email : 'User' }}!</div>
-                <div class="caption">You are successfully authenticated with Google.</div>
-              </div>
-            </div>
-          </v-alert>
-          
-          <v-alert
-            v-else
-            type="info"
-            text
-            icon="mdi-information"
-            class="mb-4"
-          >
-            <div>
-              <div class="subtitle-1">Authentication Ready</div>
-              <div class="caption">Sign in with your Google account to get started.</div>
-              <v-btn
-                color="primary"
-                class="mt-2"
-                to="/login"
-                small
-              >
-                <v-icon left small>mdi-google</v-icon>
-                Sign In
-              </v-btn>
-            </div>
-          </v-alert>
+          <AuthStatus />
           <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
           <p>
             For more information on Vuetify, check out the <a
@@ -122,11 +79,11 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import AuthStatus from '~/components/AuthStatus.vue'
 
 export default {
-  computed: {
-    ...mapGetters('auth', ['isAuthenticated', 'user'])
+  components: {
+    AuthStatus
   }
 }
 </script>
