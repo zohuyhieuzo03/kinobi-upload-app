@@ -79,7 +79,7 @@ export const useImageListing = () => {
     try {
       const token = await auth.currentUser.getIdToken()
       
-      const response = await fetch(`${process.env.BACKEND_URL}/list-files`, {
+      const response = await fetch(`${process.env.BACKEND_URL}/api/files/list-files`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }

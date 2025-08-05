@@ -47,7 +47,7 @@ export const useImageUpload = () => {
       throw new Error('User not authenticated')
     }
 
-    const response = await fetch(`${process.env.BACKEND_URL}/get-presigned-url`, {
+    const response = await fetch(`${process.env.BACKEND_URL}/api/files/get-presigned-url`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
